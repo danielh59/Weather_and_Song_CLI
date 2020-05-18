@@ -1,0 +1,6 @@
+#!/usr/bin/env ruby
+# shebang
+
+require_relative  '../lib/environment.rb'
+
+cli = Cli.new.execute
