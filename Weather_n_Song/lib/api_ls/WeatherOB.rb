@@ -1,33 +1,34 @@
 class The_Weatherr
-  attr_accessor :the_city, :the_country_or_state, :the_weather_conditions
+  attr_accessor :the_city, :the_country_or_state, :the_weather_conditions, :temp_min, :humidity, :temp_max
 
-@@all = []
+@@all_cities = []
 def initialize(the_city:, the_country_or_state:, the_weather_conditions:)
-  @@the_city = the_city
-  @@the_country_or_state = the_country_or_state
-  @@the_weather_conditions = the_weather_conditions
-@@all << self
+  @the_city = the_city
+  @the_country_or_state = the_country_or_state
+  @the_weather_conditions = the_weather_conditions
+  @temp_min =  @the_weather_conditions["temp_min"]
+  @humidity = @the_weather_conditions["humidity"]
+  @temp_max = @the_weather_conditions["temp_max"]
+@@all_cities << self
 end
 
-def self.the_city
-  @@the_city
+# def self.the_city
+#   @the_city
+# end
+#
+# def self.the_country_or_state
+#   @the_country_or_state
+# end
+
+# def self.the_weather_conditions
+#   @@the_weather_conditions
+#   @@temp_min
+#   @@humidity
+#   @@temp_max
+# end
+def all_cities
+  @@all_cities
 end
 
-def self.the_country_or_state
-  @@the_country_or_state
-end
-
-def self.the_weather_conditions
-  @@the_weather_conditions
-end
-
-def self.show_me_weather
-  puts " "
-  puts "Here's our city: #{self.the_city}"
-  puts "Here's our country/state: #{self.the_country_or_state}"
-  puts " "
-  puts "And finally, our main weather conditions:\n\n #{self.the_weather_conditions}"
-  puts " "
-end
 
 end
