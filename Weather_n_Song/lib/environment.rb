@@ -1,5 +1,5 @@
 
-require 'pry'
+#require 'pry'
 require 'httparty' ##interacting with api
 require 'json'
 
